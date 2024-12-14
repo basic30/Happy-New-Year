@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico');
 
+/* Global Reset */
 *, *:after, *:before {
   box-sizing: border-box;
   margin: 0;
@@ -8,10 +9,12 @@
   transition: all 100ms ease-in;
 }
 
+/* Background Color */
 html {
   background: #222048;
 }
 
+/* "Happy New Year" Text */
 .feliz {
   width: 100%;
   font-family: 'Pacifico', cursive;
@@ -25,6 +28,7 @@ html {
   animation: vem_feliz 2s ease-in-out 7s forwards;
 }
 
+/* Year Container */
 .ano_novo {
   position: absolute;
   top: 0;
@@ -36,9 +40,10 @@ html {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 15vw 5vw; /* Adjusted for responsiveness */
+  padding: 10vw 5vw; /* Adjusted for responsiveness */
 }
 
+/* Year Digits */
 .ano_novo > span {
   font-family: 'Montserrat', sans-serif;
   font-size: 18vw; /* Adjusted for responsiveness */
@@ -46,21 +51,23 @@ html {
   color: #7a8fe8;
 }
 
+/* Animations for the Year */
 span.seis, span.sete {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
+/* Balloon */
 .balao {
-  width: 10vw; /* Adjusted for responsiveness */
-  height: 10vw; /* Adjusted for responsiveness */
+  width: 12vw; /* Adjusted for responsiveness */
+  height: 12vw; /* Adjusted for responsiveness */
   display: block;
   background: #e8d57a;
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  margin-top: -16vw;
+  margin-top: -20vw;
   right: 0;
   margin-right: -20vw; /* Adjusted for responsiveness */
   animation: vem_e_vai_balao 10s ease-in-out forwards;
@@ -68,16 +75,17 @@ span.seis, span.sete {
 
 .balao:after {
   content: '';
-  width: 0.4vw; /* Adjusted for responsiveness */
-  height: 10vw; /* Adjusted for responsiveness */
+  width: 0.5vw; /* Adjusted for responsiveness */
+  height: 15vw; /* Adjusted for responsiveness */
   display: block;
   background: #fff;
   position: absolute;
   left: 50%;
-  margin-left: -0.2vw;
-  bottom: -11vw;
+  margin-left: -0.25vw;
+  bottom: -16vw;
 }
 
+/* Fireworks */
 .fogos {
   width: 100%;
   height: 100%;
@@ -116,8 +124,8 @@ span.seis, span.sete {
 }
 
 .fogos > div span {
-  width: 0.6vw; /* Adjusted for responsiveness */
-  height: 0.6vw; /* Adjusted for responsiveness */
+  width: 1vw; /* Adjusted for responsiveness */
+  height: 1vw; /* Adjusted for responsiveness */
   display: block;
   position: absolute;
   top: 0;
@@ -133,7 +141,7 @@ span.seis, span.sete {
   }
 
   .ano_novo {
-    padding: 10vw 5vw;
+    padding: 5vw 2vw;
   }
 
   .ano_novo > span {
@@ -141,16 +149,121 @@ span.seis, span.sete {
   }
 
   .balao {
-    width: 15vw; 
+    width: 15vw;
     height: 15vw;
   }
 
   .balao:after {
-    height: 15vw; 
+    height: 20vw;
   }
 
   .fogos > div span {
-    width: 1vw; 
-    height: 1vw; 
+    width: 2vw;
+    height: 2vw;
+  }
+}
+
+/* Keyframes */
+@keyframes vem_2017 {
+  0% {
+    right: 0%;
+  }
+  66.6666% {
+    right: 50%;
+    margin-right: -300px;
+  }
+  90% {
+    right: 50%;
+    margin-right: -300px;
+  }
+  100% {
+    right: 50%;
+  }
+}
+
+@keyframes vem_e_vai_balao {
+  0% {
+    right: 0%;
+  }
+  40% {
+    right: 50%;
+    margin-right: -300px;
+  }
+  50% {
+    right: 50%;
+    margin-right: -200px;
+    top: 50%;
+  }
+  100% {
+    top: -100%;
+    right: 50%;
+  }
+}
+
+@keyframes entrega_balao {
+  0% {
+    transform: rotate(-30deg);
+    width: 40px;
+  }
+  100% {
+    transform: rotate(-150deg);
+    width: 70px;
+  }
+}
+
+@keyframes vem_feliz {
+  0% {
+    margin-top: 0px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: -200px;
+    opacity: 1;
+  }
+}
+
+@keyframes solta_fogos {
+  0% {
+    margin-top: 100%;
+    opacity: 0;
+    width: 2px;
+    height: 30px;
+    display: block;
+    border-radius: 50%;
+  }
+  75% {
+    margin-top: 0%;
+    opacity: 1;
+    width: 2px;
+    height: 30px;
+    display: block;
+    border-radius: 50%;
+  }
+  80% {
+    margin-top: 0px;
+    margin-left: 0px;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    transform: scale(1);
+  }
+}
+
+@keyframes estoura_fogos {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
