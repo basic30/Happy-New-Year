@@ -5,11 +5,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
 }
 
-/* Background */
 html, body {
   background: #222048;
   margin: 0;
@@ -21,18 +19,17 @@ html, body {
 /* Happy New Year Text */
 .feliz {
   font-family: 'Pacifico', cursive;
-  font-size: 10vw; /* Scales with screen size */
-  font-weight: 700;
+  font-size: 8vw; /* Scales dynamically with screen size */
   color: #f48fb1;
   text-align: center;
   position: absolute;
   width: 100%;
-  top: 35%;
+  top: 20%;
   opacity: 0;
   animation: vem_feliz 2s ease-in-out 7s forwards;
 }
 
-/* Year Container */
+/* Year Display */
 .ano_novo {
   position: absolute;
   top: 50%;
@@ -40,23 +37,22 @@ html, body {
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  gap: 5vw; /* Adjusts spacing between numbers */
+  gap: 3vw; /* Spacing between numbers */
 }
 
-/* Year Digits */
 .ano_novo > span {
   font-family: 'Montserrat', sans-serif;
-  font-size: 20vw; /* Scales with screen size */
+  font-size: 20vw; /* Scales dynamically */
   font-weight: 700;
   color: #7a8fe8;
   position: relative;
 }
 
-span.seis {
+.seis {
   animation: vai_2016 5s ease-in-out 5s forwards;
 }
 
-span.sete {
+.sete {
   animation: vem_2017 6s ease-in-out forwards;
 }
 
@@ -88,7 +84,6 @@ span.sete {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .fogos > div {
@@ -99,29 +94,29 @@ span.sete {
   border-radius: 50%;
 }
 
-.fogos > div.f1 {
+.f1 {
   left: 20%;
   top: 40%;
 }
 
-.fogos > div.f2 {
+.f2 {
   left: 15%;
   top: 70%;
 }
 
-.fogos > div.f3 {
+.f3 {
   right: 20%;
   top: 40%;
 }
 
-.fogos > div.f4 {
+.f4 {
   right: 15%;
   top: 70%;
 }
 
 .fogos > div span {
-  width: 2vw;
-  height: 2vw;
+  width: 1vw;
+  height: 1vw;
   display: block;
   position: absolute;
   top: 0;
@@ -130,11 +125,11 @@ span.sete {
   animation: estoura_fogos 0.5s ease-in-out 9s forwards;
 }
 
-/* Media Query for Smaller Devices */
+/* Mobile Optimization */
 @media (max-width: 768px) {
   .feliz {
     font-size: 12vw;
-    top: 25%;
+    top: 10%;
   }
 
   .ano_novo > span {
@@ -142,85 +137,4 @@ span.sete {
   }
 
   .balao {
-    width: 20vw;
-    height: 20vw;
-  }
-
-  .balao:after {
-    height: 15vw;
-  }
-
-  .fogos > div span {
-    width: 3vw;
-    height: 3vw;
-  }
-}
-
-/* Animations */
-@keyframes vem_2017 {
-  0% {
-    transform: translateX(150%);
-  }
-  66% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes vai_2016 {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-150%);
-  }
-}
-
-@keyframes vem_feliz {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-30%);
-  }
-}
-
-@keyframes vem_e_vai_balao {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(-150%);
-  }
-}
-
-@keyframes solta_fogos {
-  0% {
-    margin-top: 100%;
-    opacity: 0;
-  }
-  75% {
-    margin-top: 0;
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes estoura_fogos {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+    width:
